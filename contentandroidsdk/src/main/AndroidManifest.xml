@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.maishuo.haohai">
+
+    <!-- 用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+    <!-- 用于访问GPS定位 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- 联网权限 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 访问网络状态 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 读写存储权限 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 安装包的权限 -->
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <!-- 允许程序录制音频 -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <!-- 读取手机状态和身份 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- 允许程序振动 -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <!-- 允许程序在手机屏幕关闭后后台进程仍然运行 -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <!-- 将服务提升为前台服务 -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <!-- 获取相关的蓝牙权限 -->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <!-- 屏蔽系统锁屏 -->
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+
+    <application>
+
+        <!-- 适配刘海屏 -->
+        <meta-data
+            android:name="android.max_aspect"
+            android:value="2.4" />
+        <!-- 适配华为（huawei）刘海屏 -->
+        <meta-data
+            android:name="android.notch_support"
+            android:value="true" />
+
+        <!-- 适配小米（xiaomi）刘海屏 -->
+        <meta-data
+            android:name="notch.config"
+            android:value="portrait|landscape" />
+
+        <!-- 播放页 -->
+        <activity
+            android:name="com.maishuo.haohai.main.ui.CustomPlayerPagerActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomAppTheme" />
+
+        <!-- 我的收藏 -->
+        <activity
+            android:name=".person.ui.MyFavoriteActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomAppTheme" />
+
+        <!-- 我的下载 -->
+        <activity
+            android:name=".person.ui.DownloadActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomAppTheme" />
+
+        <!-- 下载中页面 -->
+        <activity
+            android:name=".person.ui.DownloadingActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomAppTheme" />
+
+        <!-- 我的下载子页面 -->
+        <activity
+            android:name=".person.ui.DownloadDetailsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomAppTheme" />
+
+        <!-- 搜索页 -->
+        <activity
+            android:name=".person.ui.SearchActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomAppTheme" />
+
+        <!-- 其他推荐 -->
+        <activity
+            android:name=".main.lite.CustomLiteOtherRecommendActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomAppTheme" />
+
+        <!-- 兴趣选择页 -->
+        <activity
+            android:name=".person.ui.InterestActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomAppTheme" />
+
+        <!-- 播放历史 -->
+        <activity
+            android:name=".person.ui.PlayHistoryActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomAppTheme" />
+
+        <service android:name=".main.service.AudioPlayerService" />
+        <service android:name=".person.service.DownloadService" />
+    </application>
+</manifest>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+
+    <dimen name="lock_margin_top">20dp</dimen>
+    <dimen name="lock_margin_bottom">30dp</dimen>
+    <dimen name="lock_iv_size">196dp</dimen>
+
+</resources>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="16dp"
+    android:paddingStart="16dp"
+    android:paddingTop="16dp">
+
+    <FrameLayout
+        android:id="@+id/fl_downloading_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_downloading_cover"
+            android:layout_width="84dp"
+            android:layout_height="84dp"
+            android:scaleType="fitXY"
+            tools:background="@color/green" />
+
+        <RelativeLayout
+            android:id="@+id/rl_downloading_status"
+            android:layout_width="84dp"
+            android:layout_height="84dp"
+            android:background="#72000000">
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/tv_downloading_status"
+                android:layout_centerHorizontal="true">
+
+                <com.maishuo.haohai.widgets.BGAProgressBar
+                    android:id="@+id/pb_downloading"
+                    style="@android:style/Widget.ProgressBar.Horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:progress="0"
+                    app:bga_pb_isCapRounded="false"
+                    app:bga_pb_isHiddenText="true"
+                    app:bga_pb_mode="circle"
+                    app:bga_pb_radius="12dp"
+                    app:bga_pb_reachedColor="#ffffff"
+                    app:bga_pb_reachedHeight="1dp"
+                    app:bga_pb_textColor="#ffffff"
+                    app:bga_pb_textSize="12sp"
+                    app:bga_pb_unReachedColor="#00000000"
+                    app:bga_pb_unReachedHeight="1dp" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_downloading_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    tools:src="@mipmap/icon_downloading_fail" />
+
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/tv_downloading_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="12dp"
+                android:textColor="#ffffffff"
+                android:textSize="12sp"
+                tools:text="下载失败" />
+
+
+        </RelativeLayout>
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tv_downloading_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_toStartOf="@id/iv_downloading_delete"
+        android:layout_toEndOf="@id/fl_downloading_container"
+        android:textColor="#333333"
+        android:textSize="14sp"
+        tools:text="内容内容内容内容内容…" />
+
+    <TextView
+        android:id="@+id/tv_downloading_sum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/fl_downloading_container"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="2dp"
+        android:layout_toStartOf="@id/iv_downloading_delete"
+        android:layout_toEndOf="@id/fl_downloading_container"
+        android:textColor="#262729"
+        android:textSize="12sp"
+        tools:text="章节" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_downloading_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:padding="16dp"
+        android:src="@mipmap/icon_myfavorite_delete" />
+
+
+</RelativeLayout>

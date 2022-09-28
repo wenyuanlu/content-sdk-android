@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/drawable_white_top_r15_shape">
+
+        <com.kcrason.dynamicpagerindicatorlibrary.DynamicPagerIndicator
+            android:id="@+id/dialog_lite_player_bottom_tablayout"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            app:indicatorLineEndColor="@color/color_9e64b0"
+            app:indicatorLineHeight="2dp"
+            app:indicatorLineScrollMode="dynamic"
+            app:indicatorLineStartColor="@color/color_9e64b0"
+            app:indicatorLineWidth="16dp"
+            app:isTabSelectedTextBold="true"
+            app:pagerIndicatorMode="fixed"
+            app:tabNormalTextColor="@color/color_666666"
+            app:tabNormalTextSize="14dp"
+            app:tabPadding="10dp"
+            app:tabSelectedTextColor="@color/color_333333"
+            app:tabSelectedTextSize="16dp" />
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/dialog_lite_player_bottom_vp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/dialog_lite_player_bottom_dismiss"
+            android:layout_below="@id/dialog_lite_player_bottom_tablayout" />
+
+        <TextView
+            android:id="@+id/dialog_lite_player_bottom_dismiss"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/white"
+            android:elevation="15dp"
+            android:gravity="center"
+            android:padding="25dp"
+            android:text="关闭"
+            android:textColor="#999999"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+</layout>

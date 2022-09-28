@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/play_history_rl_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/play_history_iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="32dp"
+            android:paddingBottom="16dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:src="@mipmap/arrow_gray_left" />
+
+        <TextView
+            android:id="@+id/play_history_tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="播放历史"
+            android:paddingTop="32dp"
+            android:paddingBottom="16dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/play_history_iv_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@+id/play_history_iv_back"
+            android:layout_alignBottom="@+id/play_history_iv_back"
+            android:paddingTop="32dp"
+            android:paddingBottom="16dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:src="@mipmap/icon_myfavorite_delete" />
+    </RelativeLayout>
+
+    <com.maishuo.haohai.widgets.refresh.RefreshView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/play_history_rl_title" />
+
+    <RelativeLayout
+        android:id="@+id/play_history_rl_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/drawable_white_r5_shape"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <CheckBox
+            android:id="@+id/play_history_cb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:button="@drawable/selector_download_checkbox"
+            android:checked="false"
+            android:paddingStart="8dp"
+            android:paddingTop="20dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="20dp"
+            android:text="全选"
+            android:textColor="#ff242426"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/play_history_tv_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="16dp"
+            android:layout_toStartOf="@+id/play_history_tv_delete"
+            android:background="@drawable/view_text_bg"
+            android:paddingStart="26dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="26dp"
+            android:paddingBottom="8dp"
+            android:text="取消"
+            android:textColor="#9E64B0"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/play_history_tv_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/view_text_bg"
+            android:paddingStart="26dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="26dp"
+            android:paddingBottom="8dp"
+            android:text="删除"
+            android:textColor="#666666"
+            android:textSize="14sp" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

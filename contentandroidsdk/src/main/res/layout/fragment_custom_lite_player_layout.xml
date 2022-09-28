@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="com.maishuo.haohai.main.viewmodel.CustomLitePlayerViewModel" />
+
+        <variable
+            name="response"
+            type="com.maishuo.haohai.api.response.GetListResponse" />
+
+        <import type="android.text.TextUtils" />
+
+        <import type="android.view.View" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#f5f5f5">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/custom_lite_player_cover_background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="240dp"
+            android:scaleType="centerCrop"
+            tools:background="#33333333" />
+
+        <com.custom.appdemo.widgets.HorizontalTextview
+            android:id="@+id/custom_lite_player_works_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="55dp"
+            android:layout_marginTop="45dp"
+            android:layout_marginEnd="55dp"
+            android:layout_marginBottom="5dp"
+            android:ellipsize="marquee"
+            android:gravity="center"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:singleLine="true"
+            android:text="@{response.album_name}"
+            android:textColor="#313131"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            tools:text="标题标题标题标题标题标题标题标题标题标…" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/custom_lite_player_works_name"
+            android:layout_alignBaseline="@id/custom_lite_player_author_name"
+            android:layout_centerHorizontal="true"
+            android:layout_marginEnd="5dp"
+            android:layout_toStartOf="@id/custom_lite_player_author_name"
+            android:gravity="center"
+            android:text="作者"
+            android:textColor="#666666"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:visibility="@{TextUtils.isEmpty(response.author_name) ? View.GONE : View.VISIBLE}" />
+
+        <TextView
+            android:id="@+id/custom_lite_player_author_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/custom_lite_player_works_name"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="@{response.author_name}"
+            android:textColor="#666666"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <com.maishuo.haohai.widgets.CustomRoundedImageView
+            android:id="@+id/custom_lite_player_work_big_cover"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_below="@id/custom_lite_player_author_name"
+            android:layout_marginStart="88dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="88dp"
+            android:layout_marginBottom="15dp"
+            app:radius="20dp" />
+
+        <FrameLayout
+            android:id="@+id/custom_lite_player_work_ad_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@id/custom_lite_player_work_big_cover"
+            android:layout_alignTop="@id/custom_lite_player_work_big_cover"
+            android:layout_alignEnd="@id/custom_lite_player_work_big_cover"
+            android:layout_alignBottom="@id/custom_lite_player_work_big_cover" />
+
+        <include
+            android:id="@+id/view_lite_player_include_layout"
+            layout="@layout/view_lite_player_include_layout" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/custom_lite_player_lite_control_back"
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:scaleType="centerCrop"
+            android:visibility="gone"
+            tools:background="@color/red"
+            tools:visibility="visible" />
+
+        <include
+            android:id="@+id/custom_lite_player_title_layout"
+            layout="@layout/view_player_lite_title_layout"
+            app:response="@{response}"
+            app:viewmodel="@{viewmodel}" />
+
+        <com.maishuo.haohai.widgets.control.CustomPlayerControlView
+            android:id="@+id/custom_lite_player_control_view"
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="400dp"
+            android:layout_marginEnd="20dp"
+            android:paddingBottom="15dp" />
+
+        <FrameLayout
+            android:id="@+id/view_lite_player_top_control__frame_layout"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="180dp"
+            android:background="@drawable/drawable_white_top_r15_shape"
+            android:onClick="@{()->viewmodel.scrollToBottom()}"
+            android:visibility="gone">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@mipmap/arrow_top_gray_icon" />
+        </FrameLayout>
+    </RelativeLayout>
+</layout>

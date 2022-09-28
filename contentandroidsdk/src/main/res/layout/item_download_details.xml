@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <CheckBox
+        android:id="@+id/ck_item_download_details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="16dp"
+        android:button="@drawable/selector_download_checkbox"
+        android:checked="false"
+        android:paddingTop="16dp"
+        android:paddingEnd="6dp"
+        android:paddingBottom="16dp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tv_item_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:layout_toEndOf="@+id/ck_item_download_details"
+        android:padding="16dp"
+        android:singleLine="true"
+        android:text="第一章：花式不朽超级重磅重生"
+        android:textColor="#ff000000"
+        android:textSize="14sp" />
+
+    <ImageView
+        android:id="@+id/iv_item_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:padding="16dp"
+        android:src="@mipmap/player_list_del" />
+
+    <View
+        style="@style/common_linear_style"
+        android:layout_below="@+id/tv_item_title" />
+
+</RelativeLayout>

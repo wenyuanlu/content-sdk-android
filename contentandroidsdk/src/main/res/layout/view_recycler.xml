@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_download_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:background="@drawable/drawable_white_r5_shape">
+
+        <TextView
+            android:id="@+id/tv_download_play"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@mipmap/icon_download_play"
+            android:drawablePadding="4dp"
+            android:padding="16dp"
+            android:text="播放全部"
+            android:textColor="#ff242426"
+            android:textSize="12sp"
+            android:visibility="visible" />
+
+        <CheckBox
+            android:id="@+id/ck_download"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:button="@drawable/selector_download_checkbox"
+            android:checked="false"
+            android:paddingStart="8dp"
+            android:paddingTop="16dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="16dp"
+            android:text="全选"
+            android:textColor="#ff242426"
+            android:textSize="12sp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_download_multiple_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:drawableEnd="@mipmap/icon_myfavorite_delete"
+            android:drawablePadding="4dp"
+            android:padding="16dp"
+            android:text="批量删除"
+            android:textColor="#ff242426"
+            android:textSize="12sp"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/tv_download_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@+id/tv_download_single_delete"
+            android:padding="16dp"
+            android:text="取消"
+            android:textColor="#ff242426"
+            android:textSize="12sp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_download_single_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:padding="16dp"
+            android:text="删除"
+            android:textColor="#ff242426"
+            android:textSize="12sp"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+    <com.maishuo.haohai.widgets.refresh.RefreshView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

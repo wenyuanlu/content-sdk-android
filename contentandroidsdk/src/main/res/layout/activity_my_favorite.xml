@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.kcrason.dynamicpagerindicatorlibrary.DynamicPagerIndicator
+        android:id="@+id/my_favorite_title_tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white"
+        app:indicatorLineEndColor="@color/color_fed100"
+        app:indicatorLineHeight="2dp"
+        app:indicatorLineScrollMode="dynamic"
+        app:indicatorLineStartColor="@color/color_fed100"
+        app:indicatorLineWidth="16dp"
+        app:isTabSelectedTextBold="true"
+        app:pagerIndicatorMode="fixed"
+        app:tabNormalTextColor="@color/color_606266"
+        app:tabNormalTextSize="14dp"
+        app:tabPadding="10dp"
+        app:tabSelectedTextColor="@color/color_333333"
+        app:tabSelectedTextSize="16dp" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/my_favorite_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:background="@color/green" />
+
+</LinearLayout>

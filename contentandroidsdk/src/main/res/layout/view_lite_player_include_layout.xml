@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="40dp"
+    android:background="@color/transparent">
+
+    <com.maishuo.haohai.widgets.CustomNestedScrollView
+        android:id="@+id/custom_lite_player_nested_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:descendantFocusability="blocksDescendants"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:id="@+id/custom_lite_player_nested_child_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:id="@+id/custom_lite_player_nested_sidle_view"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/drawable_white_top_r15_shape">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@mipmap/arrow_top_gray_icon" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:minHeight="300dp">
+
+                <com.qichuang.commonlibs.widgets.CommonRecyclerView
+                    android:id="@+id/custom_lite_player_nested_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false" />
+            </FrameLayout>
+        </LinearLayout>
+    </com.maishuo.haohai.widgets.CustomNestedScrollView>
+</FrameLayout>

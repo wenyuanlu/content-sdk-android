@@ -1,0 +1,69 @@
+apply plugin: 'com.android.library'
+apply from: '../config.gradle'
+apply from: '../gradle_dependencies.gradle'
+
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-parcelize'
+apply plugin: 'kotlin-kapt'
+
+android {
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+
+    defaultConfig {
+        flavorDimensions "versionCode"
+
+        // 仅保留中文语种的资源
+        resConfigs 'zh'
+
+        //超过64K 支持分包
+        multiDexEnabled true
+
+        ndk {
+            abiFilters 'armeabi-v7a', 'x86', 'arm64-v8a', 'x86_64'
+        }
+
+        //Room 可以在编译时将数据库的架构信息导出为 JSON 文件
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [
+                        "room.schemaLocation":"$projectDir/schemas".toString(),
+                        "room.incremental":"true",
+                        "room.expandProjection":"true"]
+            }
+        }
+
+        consumerProguardFiles 'proguard-rules.pro'
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    viewBinding {
+        enabled = true
+    }
+}
+
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+dependencies {
+    //ivoice
+//    compileOnly(name: 'com.corpize.sdk.ivoice_V1.1.2', ext: 'aar')
+    compileOnly(name: 'com.corpize.sdk.ivoice_V1.1.2_test', ext: 'aar')
+}

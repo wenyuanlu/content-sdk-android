@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="ActivityTheme" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <!-- 无标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 无ActionBar -->
+        <item name="android:windowActionBar">false</item>
+        <!-- 全屏即无通知栏 -->
+        <item name="android:windowFullscreen">false</item>
+        <!-- 是否有遮盖 -->
+        <item name="android:windowContentOverlay">@null</item>
+        <!-- 锁定竖屏 -->
+        <item name="android:screenOrientation">portrait</item>
+        <!-- 背景透明 -->
+        <item name="android:windowIsTranslucent">true</item>
+        <!-- 暗黑模式 -->
+        <item name="android:forceDarkAllowed">true</item>
+    </style>
+</resources>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:paddingStart="16dp"
+    android:paddingTop="16dp">
+
+    <CheckBox
+        android:id="@+id/ck_item_download"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:button="@drawable/selector_download_checkbox"
+        android:checked="false"
+        android:paddingTop="20dp"
+        android:paddingEnd="10dp"
+        android:paddingBottom="20dp"
+        android:visibility="visible" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_download_cover"
+        android:layout_width="84dp"
+        android:layout_height="84dp"
+        android:layout_marginEnd="16dp"
+        android:layout_toEndOf="@+id/ck_item_download"
+        android:scaleType="fitXY"
+        tools:background="@color/green" />
+
+    <TextView
+        android:id="@+id/tv_download_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_toStartOf="@id/iv_download_delete"
+        android:layout_toEndOf="@id/iv_download_cover"
+        android:textColor="#333333"
+        android:textSize="14sp"
+        tools:text="内容内容内容内容内容…" />
+
+    <TextView
+        android:id="@+id/tv_download_sum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/iv_download_cover"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="2dp"
+        android:layout_toStartOf="@id/iv_download_delete"
+        android:layout_toEndOf="@id/iv_download_cover"
+        android:textColor="#262729"
+        android:textSize="12sp"
+        tools:text="章节" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_download_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/iv_download_cover"
+        android:layout_alignParentEnd="true"
+        android:paddingStart="16dp"
+        android:paddingTop="16dp"
+        android:paddingEnd="16dp"
+        android:src="@mipmap/icon_myfavorite_delete" />
+
+    <View
+        style="@style/common_linear_style"
+        android:layout_below="@id/iv_download_cover"
+        android:layout_marginTop="16dp" />
+
+</RelativeLayout>

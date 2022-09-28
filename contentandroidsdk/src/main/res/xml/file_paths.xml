@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <!-- 适配Android 7.0文件意图 -->
+    <external-path
+        path="Android/data/com.hjq.demo/"
+        name="files_root" />
+    <external-path
+        path="."
+        name="external_storage_root" />
+
+    <external-files-path name="opensdk_external" path="Images/tmp"/>
+    <external-files-path name="umeng_cache" path="umeng_cache/"/>
+    <root-path name="opensdk_root" path=""/>
+
+    <!-- 新浪微博 官方分享SDK 10.10.0共享路径 -->
+    <external-files-path name="share_files" path="." />
+</paths>

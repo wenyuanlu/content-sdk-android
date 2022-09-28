@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginStart="2dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginEnd="2dp"
+    android:layout_marginBottom="10dp"
+    android:orientation="vertical">
+
+    <com.maishuo.haohai.widgets.CustomRoundedImageView
+        android:id="@+id/other_rec_iv_show"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        android:scaleType="centerCrop"
+        tools:background="@color/red" />
+
+    <TextView
+        android:id="@+id/other_rec_tv_show"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="5dp"
+        android:layout_weight="1"
+        android:ellipsize="end"
+        android:gravity="center_horizontal"
+        android:lines="1"
+        android:textColor="@color/color_262729"
+        android:textSize="12dp"
+        tools:text="那年夏天那年" />
+
+</LinearLayout>

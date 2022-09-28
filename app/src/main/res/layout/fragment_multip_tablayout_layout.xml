@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/multiply_table_fragment_table"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#f5f5f5" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/multiply_table_fragment_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/multiply_table_fragment_table"
+        android:background="#ffffff" />
+
+</RelativeLayout>

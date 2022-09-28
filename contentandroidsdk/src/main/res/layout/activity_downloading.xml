@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_download_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#F9F9F9"
+        android:visibility="visible"
+        tools:visibility="visible">
+
+        <ImageView
+            android:id="@+id/iv_download_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="16dp"
+            android:paddingTop="16dp"
+            android:paddingEnd="2dp"
+            android:paddingBottom="16dp"
+            android:src="@mipmap/icon_download_play" />
+
+        <TextView
+            android:id="@+id/tv_download_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/iv_download_start"
+            android:paddingStart="2dp"
+            android:paddingTop="16dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="16dp"
+            android:text="全部开始"
+            android:textColor="#242426"
+            android:textSize="12sp"
+            android:visibility="visible" />
+
+
+        <TextView
+            android:id="@+id/tv_download_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:drawableStart="@mipmap/icon_myfavorite_delete"
+            android:drawablePadding="4dp"
+            android:padding="16dp"
+            android:text="全部删除"
+            android:textColor="#242426"
+            android:textSize="12sp"
+            android:visibility="visible" />
+
+    </RelativeLayout>
+
+    <com.maishuo.haohai.widgets.refresh.RefreshView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white" />
+
+</LinearLayout>

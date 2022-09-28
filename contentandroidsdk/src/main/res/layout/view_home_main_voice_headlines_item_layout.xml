@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/voice_headlines_root_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="10dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/voice_headlines_iv_show"
+            android:layout_width="84dp"
+            android:layout_height="84dp"
+            android:layout_marginEnd="16dp"
+            android:background="@color/color_f5f5f5"
+            tools:src="@mipmap/home_item_default_icon" />
+
+        <TextView
+            android:id="@+id/voice_headlines_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@id/voice_headlines_iv_show"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textColor="@color/color_333333"
+            android:textSize="14dp"
+            android:textStyle="bold"
+            tools:text="印度要凉印度要凉印度要凉印度要凉印度要凉印度要凉印度要凉印度要凉印度要凉印度要凉印" />
+
+        <TextView
+            android:id="@+id/voice_headlines_create"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/voice_headlines_iv_show"
+            android:layout_toEndOf="@id/voice_headlines_iv_show"
+            android:textColor="@color/color_333333"
+            android:textSize="14dp"
+            tools:text="来自:今日头条" />
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/voice_headlines_ad_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+
+    <View
+        style="@style/common_linear_style"
+        android:layout_gravity="bottom" />
+</FrameLayout>

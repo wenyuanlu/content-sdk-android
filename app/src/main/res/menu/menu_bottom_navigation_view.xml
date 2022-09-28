@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/item_bottom_1"
+        android:enabled="true"
+        android:icon="@mipmap/ic_launcher"
+        android:title="一"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/item_bottom_2"
+        android:enabled="true"
+        android:icon="@mipmap/ic_launcher"
+        android:title="二"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/item_bottom_3"
+        android:enabled="true"
+        android:icon="@mipmap/ic_launcher"
+        android:title="三"
+        app:showAsAction="ifRoom" />
+
+</menu>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:background="@drawable/drawable_white_r5_shape"
+        android:elevation="@dimen/dp_10"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/home_main_voice_headlines_all_player"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_margin="10dp"
+                android:drawableStart="@mipmap/headlines_play_all_icon"
+                android:drawablePadding="10dp"
+                android:text="播放全部"
+                android:textColor="@color/color_333333"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/home_main_voice_headlines_refresh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:drawablePadding="10dp"
+                android:text="换一批"
+                android:textColor="@color/color_333333"
+                android:textSize="12dp"
+                app:drawableStartCompat="@mipmap/home_voice_headlines_refresh_icon" />
+
+            <TextView
+                android:id="@+id/home_main_voice_headlines_download"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="15dp"
+                android:layout_toStartOf="@id/home_main_voice_headlines_refresh"
+                android:drawableStart="@mipmap/download_status_1"
+                android:drawablePadding="5dp"
+                android:text="下载全部"
+                android:textColor="@color/color_333333"
+                android:textSize="12dp" />
+
+        </RelativeLayout>
+
+        <View style="@style/common_linear_style" />
+
+        <com.qichuang.commonlibs.widgets.CommonRecyclerView
+            android:id="@+id/home_main_voice_headlines_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+</FrameLayout>

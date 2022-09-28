@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:paddingStart="16dp"
+    android:paddingTop="16dp"
+    android:paddingEnd="16dp">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_my_favorite"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="16dp"
+        android:scaleType="fitXY"
+        tools:background="@color/green" />
+
+    <TextView
+        android:id="@+id/tv_my_favorite_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_toEndOf="@id/iv_my_favorite"
+        android:textColor="#333333"
+        android:textSize="14sp"
+        tools:text="内容内容内容内容内容…" />
+
+    <TextView
+        android:id="@+id/tv_my_favorite_section"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/iv_my_favorite"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="2dp"
+        android:layout_toStartOf="@id/iv_my_favorite_delete"
+        android:layout_toEndOf="@id/iv_my_favorite"
+        android:textColor="#262729"
+        android:textSize="12sp"
+        tools:text="章节" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_my_favorite_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/iv_my_favorite"
+        android:layout_alignParentEnd="true"
+        android:src="@mipmap/icon_myfavorite_delete" />
+
+    <View
+        style="@style/common_linear_style"
+        android:layout_below="@id/iv_my_favorite"
+        android:layout_marginTop="16dp" />
+
+</RelativeLayout>

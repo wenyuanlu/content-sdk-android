@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.qichuang.commonlibs.widgets.refresh.CommonRefreshView
+        android:id="@+id/home_main_refresh_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.qichuang.commonlibs.widgets.CommonRecyclerView
+            android:id="@+id/home_main_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            android:background="@drawable/drawable_white_r5_shape"
+            android:elevation="@dimen/dp_10"
+            android:padding="5dp" />
+    </com.qichuang.commonlibs.widgets.refresh.CommonRefreshView>
+</FrameLayout>

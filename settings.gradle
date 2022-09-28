@@ -1,0 +1,3 @@
+include ':contentandroidsdk'
+include ':app'
+rootProject.name = "ContentAndroidSdk"

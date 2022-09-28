@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.maishuo.haohai.main.viewmodel.CustomPlayerPagerViewModel" />
+
+        <variable
+            name="response"
+            type="com.maishuo.haohai.api.response.GetListResponse" />
+
+        <import type="android.text.TextUtils" />
+
+        <import type="android.view.View" />
+
+    </data>
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/player_pager_drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="3">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/player_back_iv_show"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    tools:background="@color/red" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#99FFFFFF" />
+
+                <RelativeLayout
+                    android:id="@+id/player_title_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_50">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:onClick="@{()->viewModel.pagerDismiss()}"
+                        android:paddingStart="15dp"
+                        android:paddingEnd="15dp"
+                        android:src="@mipmap/gray_arrow_down" />
+
+                    <!--                    <CheckBox-->
+                    <!--                        android:id="@+id/player_top_collection"-->
+                    <!--                        android:layout_width="23dp"-->
+                    <!--                        android:layout_height="23dp"-->
+                    <!--                        android:layout_alignParentEnd="true"-->
+                    <!--                        android:layout_centerVertical="true"-->
+                    <!--                        android:layout_marginStart="15dp"-->
+                    <!--                        android:layout_marginEnd="15dp"-->
+                    <!--                        android:background="@drawable/drawable_voice_novel_check_selector"-->
+                    <!--                        android:button="@null"-->
+                    <!--                        android:onClick="@{()->viewModel.setCollection()}" />-->
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/player_content_title_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/player_title_layout"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="15dp"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:lines="1"
+                    android:text="@{response.album_name}"
+                    android:textColor="@color/color_262729"
+                    android:textSize="16dp"
+                    tools:text="重生之都市之尊重生之都市之尊重生之都市之尊重生之都市之尊重生之都市之尊重生之都市之尊" />
+
+                <LinearLayout
+                    android:id="@+id/player_content_title_desc_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/player_content_title_name"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/dp_3"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/player_author"
+                        android:textColor="@color/color_606266"
+                        android:textSize="10dp"
+                        android:visibility="@{TextUtils.isEmpty(response.author_name) ? View.GONE : View.VISIBLE}" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{response.author_name}"
+                        android:textColor="@color/color_606266"
+                        android:textSize="10dp"
+                        tools:text="123456" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:text="@string/player_anchor"
+                        android:textColor="@color/color_606266"
+                        android:textSize="10dp"
+                        android:visibility="@{TextUtils.isEmpty(response.anchor_name) ? View.GONE : View.VISIBLE}" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{response.anchor_name}"
+                        android:textColor="@color/color_606266"
+                        android:textSize="10dp"
+                        tools:text="123456" />
+                </LinearLayout>
+
+                <FrameLayout
+                    android:layout_width="@dimen/dp_280"
+                    android:layout_height="@dimen/dp_220"
+                    android:layout_below="@id/player_content_title_desc_layout"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp">
+
+                    <com.maishuo.haohai.widgets.CustomRoundedImageView
+                        android:id="@+id/player_content_cover"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        tools:background="@color/yellow" />
+
+                    <FrameLayout
+                        android:id="@+id/player_content_ad_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/player_content_chapter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@id/player_content_control"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="5dp"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:lines="1"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="15dp"
+                    android:textSize="12dp"
+                    android:textColor="@color/color_333333"
+                    tools:text="第2章：非要所说的" />
+
+                <com.maishuo.haohai.widgets.control.CustomPlayerControlView
+                    android:id="@+id/player_content_control"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    app:show_timeout="0" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/color_f5f5f5"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="8dp"
+                    android:paddingRight="16dp"
+                    android:paddingBottom="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="其他推荐"
+                        android:textColor="@color/color_262729"
+                        android:textSize="12dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:drawablePadding="10dp"
+                        android:onClick="@{()->viewModel.setCommonTransformation()}"
+                        android:text="换一批"
+                        android:textColor="@color/color_262729"
+                        android:textSize="12dp"
+                        app:drawableStartCompat="@mipmap/player_transformation_icon" />
+                </RelativeLayout>
+
+                <com.qichuang.commonlibs.widgets.CommonRecyclerView
+                    android:id="@+id/player_rec_recycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="start">
+
+            <include
+                android:id="@+id/player_left_menu_include"
+                layout="@layout/view_player_left_menu_layout" />
+
+        </FrameLayout>
+    </androidx.drawerlayout.widget.DrawerLayout>
+</layout>

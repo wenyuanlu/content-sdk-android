@@ -1,0 +1,91 @@
+apply plugin: 'com.android.application'
+apply from: '../config.gradle'
+apply from: '../gradle_dependencies.gradle'
+
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-parcelize'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "com.maishuo.contentandroidsdk"
+        flavorDimensions "versionCode"
+
+        ndk {
+            abiFilters 'armeabi-v7a', 'x86', 'arm64-v8a', 'x86_64'
+        }
+    }
+
+    signingConfigs {
+        release {
+            keyAlias 'paultang'
+            keyPassword 'haohaidevelopthc2019'
+            storeFile file('test.jks')
+            storePassword 'haohaidevelopthc2019'
+            v1SigningEnabled true
+            v2SigningEnabled true
+        }
+        debug {
+            keyAlias 'paultang'
+            keyPassword 'haohaidevelopthc2019'
+            storeFile file('test.jks')
+            storePassword 'haohaidevelopthc2019'
+            v1SigningEnabled true
+            v2SigningEnabled true
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    viewBinding {
+        enabled = true
+    }
+}
+
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+dependencies {
+    //ivoice
+    implementation(name: 'com.corpize.sdk.ivoice_V1.1.2', ext: 'aar')
+//    implementation(name: 'com.corpize.sdk.ivoice_V1.1.2_test', ext: 'aar')
+
+    api project(':contentandroidsdk')
+//    implementation(name: 'contentandroidsdk_V0.8.2_release', ext: 'aar')
+}

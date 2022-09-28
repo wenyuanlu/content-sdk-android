@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tv_finish_hint"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:text="我是有底线的~"
+    android:paddingTop="16dp"
+    android:paddingBottom="16dp"
+    android:textColor="#FF999999"
+    android:textSize="12sp" />

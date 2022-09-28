@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="10dp"
+    android:layout_marginTop="15dp"
+    android:layout_marginEnd="10dp"
+    android:layout_marginBottom="15dp"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <com.maishuo.haohai.widgets.CustomRoundedImageView
+        android:id="@+id/lite_player_recommend_child_item_iv_show"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:scaleType="centerCrop"
+        app:radius="5dp" />
+
+    <TextView
+        android:id="@+id/lite_player_recommend_child_item_tv_show"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:lines="1"
+        android:textColor="#242426"
+        android:textSize="11sp"
+        tools:text="文案文案文案文案文文案文案文案文案…" />
+
+</LinearLayout>

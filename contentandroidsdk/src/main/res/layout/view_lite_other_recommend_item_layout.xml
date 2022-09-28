@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="15dp"
+    android:layout_marginTop="6dp"
+    android:layout_marginEnd="15dp"
+    android:layout_marginBottom="6dp"
+    android:background="@drawable/drawable_white_r5_1_shape"
+    android:elevation="10dp">
+
+    <com.maishuo.haohai.widgets.CustomRoundedImageView
+        android:id="@+id/lite_other_recommend_image"
+        android:layout_width="87dp"
+        android:layout_height="87dp"
+        android:layout_margin="15dp"
+        app:radius="20dp"
+        tools:background="@color/red" />
+
+    <ImageView
+        android:id="@+id/lite_other_recommend_top_tip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@id/lite_other_recommend_image"
+        android:layout_alignTop="@id/lite_other_recommend_image"
+        android:layout_marginStart="-5dp"
+        android:layout_marginTop="-5dp"
+        android:visibility="gone"
+        tools:src="@mipmap/other_recommend_top_1_icon"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/lite_other_recommend_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="15dp"
+        android:layout_toEndOf="@id/lite_other_recommend_image"
+        android:lines="1"
+        android:textColor="@color/color_333333"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        tools:text="从你的全世界路过" />
+
+    <TextView
+        android:id="@+id/lite_other_recommend_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lite_other_recommend_title"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="15dp"
+        android:layout_toEndOf="@id/lite_other_recommend_image"
+        android:lines="2"
+        android:textColor="@color/color_666666"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        tools:text="前职业选手徐美被卡合同无奈屈尊做陪玩，碰见鬼见愁…" />
+
+    <TextView
+        android:id="@+id/lite_other_recommend_author"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/lite_other_recommend_image"
+        android:layout_marginTop="3dp"
+        android:layout_toEndOf="@id/lite_other_recommend_image"
+        android:lines="1"
+        android:textColor="@color/color_999999"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        tools:text="作者：树上椿树" />
+
+</RelativeLayout>

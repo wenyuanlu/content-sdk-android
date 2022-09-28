@@ -1,0 +1,57 @@
+<resources>
+
+    <style name="AppTheme" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowContentOverlay">@null</item>
+        <!-- 解决 Android 5.1 及以上版本 Button 英文字符串自动变大写的问题 -->
+        <item name="android:textAllCaps">false</item>
+        <!-- 关闭 RecyclerView ScrollView ViewPager 水波纹效果 -->
+        <item name="android:overScrollMode">never</item>
+        <!-- 默认文本颜色，Button、TextView 的文字颜色-->
+        <item name="android:textColor">@color/textColor</item>
+        <!-- 默认提示颜色，Button、TextView 的提示文字颜色 -->
+        <item name="android:textColorHint">@color/textColorHint</item>
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/color_f5f5f5</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <style name="CustomAppTheme" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowContentOverlay">@null</item>
+        <!-- 解决 Android 5.1 及以上版本 Button 英文字符串自动变大写的问题 -->
+        <item name="android:textAllCaps">false</item>
+        <!-- 关闭 RecyclerView ScrollView ViewPager 水波纹效果 -->
+        <item name="android:overScrollMode">never</item>
+        <!-- 默认文本颜色，Button、TextView 的文字颜色-->
+        <item name="android:textColor">@color/textColor</item>
+        <!-- 默认提示颜色，Button、TextView 的提示文字颜色 -->
+        <item name="android:textColorHint">@color/textColorHint</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/color_f5f5f5</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <style name="TabLayoutTheme">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="common_linear_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0.5dp</item>
+        <item name="android:background">#eeeeee</item>
+    </style>
+
+    <style name="dialog_animation" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/dialog_enter</item>
+        <item name="android:windowExitAnimation">@anim/dialog_exit</item>
+    </style>
+
+    <declare-styleable name="FloatingView">
+        <attr name="scrollEnable" format="boolean" />
+    </declare-styleable>
+
+</resources>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!--title位置-->
+        <RelativeLayout
+            android:id="@+id/base_title_layout"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:background="@color/white"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <ImageView
+                android:id="@+id/base_title_back"
+                android:layout_width="54dp"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:paddingStart="20dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="10dp"
+                android:src="@drawable/back_gary_arrow" />
+
+            <TextView
+                android:id="@+id/base_title_tv_show"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                tools:text="标题" />
+
+            <!--右侧的文字的展示-->
+            <TextView
+                android:id="@+id/base_title_right_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:padding="16dp"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:visibility="gone"
+                tools:text="菜单"
+                tools:visibility="visible" />
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/base_title_linear"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#f5f5f5"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+        <!--子类位置-->
+        <FrameLayout
+            android:id="@+id/base_content_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+</layout>

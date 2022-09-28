@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_search_item_root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp">
+
+    <ImageView
+        android:id="@+id/iv_search_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="10dp"
+        android:src="@mipmap/icon_search" />
+
+    <TextView
+        android:id="@+id/tv_search_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="4dp"
+        android:layout_toStartOf="@+id/tv_search_arrow"
+        android:layout_toEndOf="@+id/iv_search_item"
+        android:lines="1"
+        android:text="特斯拉加速事件"
+        android:textColor="#ff000000"
+        android:textSize="14sp" />
+
+    <ImageView
+        android:id="@+id/tv_search_arrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:src="@mipmap/icon_search_item_arrow" />
+
+    <View
+        style="@style/common_linear_style"
+        android:layout_below="@+id/tv_search_item"
+        android:layout_marginTop="24dp" />
+
+</RelativeLayout>
+

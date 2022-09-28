@@ -1,0 +1,20 @@
+<resources>
+
+    <style name="CustomAppTheme" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowContentOverlay">@null</item>
+        <!-- 解决 Android 5.1 及以上版本 Button 英文字符串自动变大写的问题 -->
+        <item name="android:textAllCaps">false</item>
+        <!-- 关闭 RecyclerView ScrollView ViewPager 水波纹效果 -->
+        <item name="android:overScrollMode">never</item>
+        <!-- 默认文本颜色，Button、TextView 的文字颜色-->
+        <item name="android:textColor">@color/textColor</item>
+        <!-- 默认提示颜色，Button、TextView 的提示文字颜色 -->
+        <item name="android:textColorHint">@color/textColorHint</item>
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/color_f5f5f5</item>
+        <item name="android:windowIsTranslucent">false</item>
+    </style>
+
+</resources>

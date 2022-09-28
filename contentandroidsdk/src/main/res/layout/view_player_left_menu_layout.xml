@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="response"
+            type="com.maishuo.haohai.api.response.GetListResponse" />
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/left_menu_root_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+            <TextView
+                android:id="@+id/left_menu_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:gravity="center"
+                android:text="章节目录"
+                android:textColor="@color/color_262729"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/left_menu_cover"
+                android:layout_width="88dp"
+                android:layout_height="88dp"
+                android:layout_below="@id/left_menu_title"
+                android:layout_margin="16dp"
+                tools:background="@color/red" />
+
+            <TextView
+                android:id="@+id/left_menu_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/left_menu_title"
+                android:layout_marginTop="16dp"
+                android:layout_toEndOf="@id/left_menu_cover"
+                android:text="@{response.album_name}"
+                android:textColor="@color/color_262729"
+                android:textSize="14dp"
+                android:textStyle="bold"
+                tools:text="成功从无捷径成功从无捷径成功从无捷径成功从无捷" />
+
+            <TextView
+                android:id="@+id/left_menu_desc_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/left_menu_name"
+                android:layout_marginTop="12dp"
+                android:layout_toEndOf="@id/left_menu_cover"
+                android:text="主讲人:"
+                android:textColor="@color/color_909399"
+                android:textSize="12dp" />
+
+            <TextView
+                android:id="@+id/left_menu_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/left_menu_name"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="12dp"
+                android:layout_toEndOf="@id/left_menu_desc_title"
+                android:text="@{response.anchor_name}"
+                android:textColor="@color/color_909399"
+                android:textSize="12dp"
+                tools:text="王二哈哈哈哈哈哈" />
+
+            <TextView
+                android:id="@+id/left_menu_total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/left_menu_cover"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="5dp"
+                android:textColor="@color/color_606266"
+                android:textSize="14dp"
+                tools:text="连载中  共190讲" />
+
+            <TextView
+                android:id="@+id/left_menu_download"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/left_menu_total"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="15dp"
+                android:drawableEnd="@mipmap/home_right_download"
+                android:drawablePadding="10dp"
+                android:text="下载"
+                android:textColor="@color/color_262729"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+            <com.qichuang.commonlibs.widgets.CommonRecyclerView
+                android:id="@+id/left_menu_chapter_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/left_menu_total"
+                android:background="@color/color_f5f5f5"
+                android:minHeight="38dp" />
+
+            <com.qichuang.commonlibs.widgets.CommonRecyclerView
+                android:id="@+id/left_menu_chapter_content_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/left_menu_chapter_recycler_view" />
+
+        </RelativeLayout>
+
+        <FrameLayout
+            android:id="@+id/left_menu_empty_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:visibility="gone">
+
+            <include
+                android:id="@+id/left_menu_empty_view_include"
+                layout="@layout/view_common_empty_layout" />
+        </FrameLayout>
+    </FrameLayout>
+</layout>

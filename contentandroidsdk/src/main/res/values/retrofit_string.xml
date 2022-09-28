@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="bad_network">网络异常</string>
+    <string name="connect_error">网络连接异常</string>
+    <string name="connect_timeout">网络连接超时</string>
+    <string name="parse_error">数据解析失败</string>
+    <string name="unknown_error">未知错误</string>
+
+    <string name="confirm">确定</string>
+    <string name="cancel">取消</string>
+    <string name="tip">提示</string>
+</resources>

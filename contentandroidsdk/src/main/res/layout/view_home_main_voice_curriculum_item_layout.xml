@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/curriculum_item_root_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="10dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/curriculum_item_iv_show"
+            android:layout_width="84dp"
+            android:layout_height="110dp"
+            android:layout_marginEnd="16dp"
+            android:background="@color/color_f5f5f5" />
+
+        <TextView
+            android:id="@+id/curriculum_item_text_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@id/curriculum_item_iv_show"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textColor="@color/color_262729"
+            android:textSize="14dp"
+            android:textStyle="bold"
+            tools:text="重生之都市天尊重生之都市天尊重生之都市天尊重生重生之都市天尊重生之都市天尊重生之都市天尊重生" />
+
+        <TextView
+            android:id="@+id/curriculum_item_voice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/curriculum_item_desc"
+            android:layout_marginBottom="10dp"
+            android:layout_toEndOf="@id/curriculum_item_iv_show"
+            android:drawablePadding="3dp"
+            android:gravity="center"
+            android:textColor="@color/color_262729"
+            android:textSize="10dp"
+            app:drawableStartCompat="@mipmap/novel_voice_icon"
+            tools:text="黯然阿斯" />
+
+        <TextView
+            android:id="@+id/curriculum_item_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/curriculum_item_iv_show"
+            android:layout_toEndOf="@id/curriculum_item_iv_show"
+            android:drawablePadding="3dp"
+            android:gravity="center"
+            android:textColor="@color/color_909399"
+            android:textSize="10dp"
+            tools:text="已经更新14讲/共14讲" />
+
+        <CheckBox
+            android:id="@+id/curriculum_item_keep_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/curriculum_item_iv_show"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/drawable_voice_novel_check_selector"
+            android:button="@null"
+            tools:checked="true" />
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/curriculum_item_ad_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+
+    <View
+        style="@style/common_linear_style"
+        android:layout_gravity="bottom" />
+</FrameLayout>
